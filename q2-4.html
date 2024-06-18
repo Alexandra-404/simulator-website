@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание №2</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <header class="header">
+        <section class="burger">
+            <img src="../img/menu.svg" alt="burger">
+        </section>
+        <section class="header-name">
+            <a href="#" class="header-logo">
+                <img src="../img/logo-test.svg" class="header-logo">
+            </a>
+
+        </section>
+        <nav id="mainnav">
+            <nav class="header-nav">
+                <ul class="list-reset header-list list-reset flex">
+                   
+                    <li class="header-list-item">
+                        <a href="../info.html" class="header-link">
+                            О проекте
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </nav>
+        <section class="logo">
+            <a href="../index.html">Учебник <span>информатики</span></a>
+        </section>
+    </header>
+    <main class="main">
+        <aside class="navigation">
+            <div class="head__navigation">
+                <h2 class="theme">Темы</h2>
+            </div>
+
+            <ol class="list__navigation">
+                <li class="link__navigation"><a href="../Табличные задачи/index-1.html">Табличные задачи</a></li>
+                <li class="link__navigation"><a href="../Табличные модели/index-2.html">Табличные модели</a></li>
+                <li class="link__navigation"><a href="../Мат логика/index-3.html">Мат логика</a></li>
+                <li class="link__navigation"><a href="../Круги Эйлера/index-4.html">Круги Эйлера</a></li>
+            </ol>
+        </aside>
+
+        <section class="allmain">
+            <p class="name">Тема: «Логика и логические задачи»</p>
+            <div class="transition"><a href="q3-4.html"><button>Далее</button></a></div><br>
+
+            <div class="text4">
+                <h3 class="zagal">Задание №2</h3>
+                <p class="zagal1">
+                    Некоторый сегмент сети Интернет состоит из 1000 сайтов. В таблице приведены запросы и количество найденных по ним сайтов в этом сегменте сети.
+                    Сколько сайтов (в тысячах) будет найдено по запросу ЧЕРНИКА|МАЛИНА|БРУСНИКА? Укажите ответ в пуcтом поле.
+                    Пример: 600.
+                <p class="zagal2">
+                    <img src="../img/таблица 2.jpeg" class="tabl">
+                </p>
+                    <input type="text" oninput="this.value = this.value.replace(/[^0-9]/g,'')" class="fio" name="one"
+                        id="one" placeholder="Введите число">
+            </div>
+
+            <div class="transition">
+                <button onclick="check()" type="button">Проверить</button>
+            </div>
+
+            <script>
+                function check() {
+                    let a = document.getElementById("one").value;
+
+                    if (a == '975000') {
+                        alert('Правильно!');
+                    }
+                    else {
+                        alert('Неправильно!');
+                    }
+                }
+            </script>
+        </section>
+    </main>
+</body>
+
+</html>

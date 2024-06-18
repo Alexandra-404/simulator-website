@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IndexedDB Example</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <script src="script.js"></script>
+    <header class="header">
+        <section class="burger">
+            <img src="../img/menu.svg" alt="burger">
+        </section>
+        <section class="header-name">
+            <a href="#" class="header-logo">
+                <img src="../img/logo-test.svg" class="header-logo"> 
+            </a>
+           
+        </section> 
+        <nav id="mainnav">
+        <nav class="header-nav">
+            <ul class="list-reset header-list list-reset flex">
+                <li class="header-list-item">
+                    <a href="info.html" class="header-link">
+                        О проекте
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </nav>
+        <section class="logo">
+            <a href="index.html">Учебник <span>информатики</span></a>
+        </section>
+    </header>
+    <main class="main">
+        <aside class="navigation">
+            <div class="head__navigation">
+                <h2 class="theme">Темы</h2>
+            </div>
+
+            <ol class="list__navigation">
+                <li class="link__navigation"><a href="Табличные задачи/index-1.html">Табличные задачи</a></li>
+                <li class="link__navigation"><a href="Табличные модели/index-2.html">Табличные модели</a></li>
+                <li class="link__navigation"><a href="Элементы алгебры/index-3.html">Элементы алгебры</a></li>
+                <li class="link__navigation"><a href="Круги Эйлера/index-4.html">Круги Эйлера</a></li>
+            </ol>
+        </aside>
+
+        <section class="allmain">
+            <div class="container">
+                <p class="name">Результаты</p>
+                <h2 class="hr"></h2>
+                    <div class="home">
+                          <div id="resultsContainer"></div>
+                          <script>
+                              // Здесь будет логика загрузки результатов выполненных заданий из базы данных и отображения их на странице
+                              const resultsContainer = document.getElementById('resultsContainer');
+                              const transaction = db.transaction(['results'], 'readonly');
+                              const objectStore = transaction.objectStore('results');
+                              
+                              objectStore.openCursor().onsuccess = function(event) {
+                                  const cursor = event.target.result;
+                                  if (cursor) {
+                                      const resultItem = document.createElement('div');
+                                      resultItem.innerHTML = `
+                                          <p>Result ID: ${cursor.value.result_id}</p>
+                                          <p>Topic Name: ${cursor.value.topic_name}</p>
+                                          <p>Correct Tasks: ${cursor.value.correct_tasks}</p>
+                                          <p>Wrong Tasks: ${cursor.value.wrong_tasks}</p>
+                                          <p>Test ID: ${cursor.value.test_id}</p>
+                                      `;
+                                      resultsContainer.appendChild(resultItem);
+                                      cursor.continue();
+                                  }
+                              };
+                          </script>
+
+                            <p class="cb">На главную</p>
+                            <a href="../index.html"><button>→</button></a>
+                        </div>
+                    </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

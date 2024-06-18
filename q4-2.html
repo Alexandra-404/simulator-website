@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание №4</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <header class="header">
+        <section class="burger">
+            <img src="../img/menu.svg" alt="burger">
+        </section>
+        <section class="header-name">
+            <a href="#" class="header-logo">
+                <img src="../img/logo-test.svg" class="header-logo">
+            </a>
+
+        </section>
+        <nav id="mainnav">
+            <nav class="header-nav">
+                <ul class="list-reset header-list list-reset flex">
+                    <li class="header-list-item">
+                        <a href="../info.html" class="header-link">
+                            О проекте
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </nav>
+        <section class="logo">
+            <a href="../index.html">Учебник <span>информатики</span></a>
+        </section>
+    </header>
+    <main class="main">
+        <aside class="navigation">
+            <div class="head__navigation">
+                <h2 class="theme">Темы</h2>
+            </div>
+
+            <ol class="list__navigation">
+                <li class="link__navigation"><a href="../Табличные задачи/index-1.html">Табличные задачи</a></li>
+                <li class="link__navigation"><a href="../Табличные модели/index-2.html">Табличные модели</a></li>
+                <li class="link__navigation"><a href="../Мат логика/index-3.html">Мат логика</a></li>
+                <li class="link__navigation"><a href="../Круги Эйлера/index-4.html">Круги Эйлера</a></li>
+            </ol>
+        </aside>
+
+        <section class="allmain">
+            <p class="name">Тема: «Логика и логические задачи»</p>
+            <div class="transition"><a href="index-2.html"><button>Далее</button></a></div><br>
+
+            <div class="text3">
+                <h3 class="zagal">Задание №4</h3>
+                <p class="zagal1">
+                    Троих молодых людей зовут Андрей, Бронислав и Борис. Один из них - аптекарь,
+                    другой - бухгалтер,
+                    третий - агроном. Один живёт в Бобруйске, другой - в Архангельске, третий - в
+                    Белгороде.
+                    Требуется
+                    выяснить, кто где живёт и у кого какая профессия. Известно лишь, что:<br>
+                    <br>
+                <p class="zagal2">
+                    1) Борис бывает в Бобруйске лишь наездами и то весьма редко, хотя все его
+                    родственники живут в
+                    этом
+                    городе;<br>
+                    2) у двоих из этих людей название профессий и городов, в которых они живут,
+                    начинаются с той же
+                    буквы,
+                    что и имена;<br>
+                    3) жена аптекаря доводится Борису младшей сестрой.</p>
+                </p>
+            </div>
+            <div>
+                <form id="myForm">
+
+                    <table border="1" cellspacing="0" cellpadding="15" class="table">
+                        <tr>
+                            <th colspan="3">Профессия</th>
+                            <th rowspan="2" class="first">Имя</th>
+                            <th colspan="3">Город</th>
+                        </tr>
+
+                        <tr>
+                            <td>Бухгалтер</td>
+                            <td>Аптекарь</td>
+                            <td>Агроном</td>
+                            <td>Бобруйск</td>
+                            <td>Белгород</td>
+                            <td>Архангельск</td>
+                        </tr>
+
+                        <tr>
+                            <td><input id="one" type="checkbox"></td>
+                            <td><input id="two" type="checkbox"></td>
+                            <td><input id="three" type="checkbox"></td>
+                            <td>Андрей</td>
+                            <td><input id="four" type="checkbox"></td>
+                            <td><input id="five" type="checkbox"></td>
+                            <td><input id="six" type="checkbox"></td>
+                        </tr>
+
+                        <tr>
+                            <td><input id="seven" type="checkbox"></td>
+                            <td><input id="eight" type="checkbox"></td>
+                            <td><input id="nine" type="checkbox"></td>
+                            <td>Бронислав</td>
+                            <td><input id="ten" type="checkbox"></td>
+                            <td><input id="eleven" type="checkbox"></td>
+                            <td><input id="twelve" type="checkbox"></td>
+                        </tr>
+
+                        <tr>
+                            <td><input id="thirteen" type="checkbox"></td>
+                            <td><input id="fourteen" type="checkbox"></td>
+                            <td><input id="fifteen" type="checkbox"></td>
+                            <td>Борис</td>
+                            <td><input id="sixteen" type="checkbox"></td>
+                            <td><input id="seventeen" type="checkbox"></td>
+                            <td><input id="eighteen" type="checkbox"></td>
+                        </tr>
+                    </table>
+                    <p id="result" class="zagal4"></p>
+                </form>
+
+                <div class="transition">
+                    <input type="submit" class="submitbut" value="Проверить" onclick="validateCheckbox(event)">
+                </div>
+
+                <script>
+                    function validateCheckbox(event) {
+                        event.preventDefault(); // предотвращаем отправку формы
+                        var one = document.getElementById("one");
+                        var two = document.getElementById("two");
+                        var three = document.getElementById("three");
+                        var four = document.getElementById("four");
+                        var five = document.getElementById("five");
+                        var six = document.getElementById("six");
+
+                        var seven = document.getElementById("seven");
+                        var eight = document.getElementById("eight");
+                        var nine = document.getElementById("nine");
+                        var ten = document.getElementById("ten");
+                        var eleven = document.getElementById("eleven");
+                        var twelve = document.getElementById("twelve");
+
+                        var thirteen = document.getElementById("thirteen");
+                        var fourteen = document.getElementById("fourteen");
+                        var fifteen = document.getElementById("fifteen");
+                        var sixteen = document.getElementById("sixteen");
+                        var seventeen = document.getElementById("seventeen");
+                        var eighteen = document.getElementById("eighteen");
+
+                        var result = document.getElementById("result");
+
+                        if (three.checked && six.checked
+                            && eight.checked && ten.checked
+                            && thirteen.checked && seventeen.checked) {
+                            result.innerHTML = "Все checkbox отмечены верно!";
+                        } else if (three.checked || six.checked || eight.checked || ten.checked || thirteen.checked || seventeen.checked) {
+                            result.innerHTML = "Один из checkbox отмечен неверно";
+                        } else {
+                            result.innerHTML = "Ни один из checkbox не отмечен";
+                        }
+                    }
+                </script>
+    </main>
+</body>
+
+</html>

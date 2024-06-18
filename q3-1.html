@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание №3</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <header class="header">
+        <section class="burger">
+            <img src="../img/menu.svg" alt="burger">
+        </section>
+        <section class="header-name">
+            <a href="#" class="header-logo">
+                <img src="../img/logo-test.svg" class="header-logo">
+            </a>
+
+        </section>
+        <nav id="mainnav">
+            <nav class="header-nav">
+                <ul class="list-reset header-list list-reset flex">
+                    <li class="header-list-item">
+                        <a href="../info.html" class="header-link">
+                            О проекте
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </nav>
+        <section class="logo">
+            <a href="../index.html">Учебник <span>информатики</span></a>
+        </section>
+    </header>
+    <main class="main">
+        <aside class="navigation">
+            <div class="head__navigation">
+                <h2 class="theme">Темы</h2>
+            </div>
+
+            <ol class="list__navigation">
+                <li class="link__navigation"><a href="../Табличные задачи/index-1.html">Табличные задачи</a></li>
+                <li class="link__navigation"><a href="../Табличные модели/index-2.html">Табличные модели</a></li>
+                <li class="link__navigation"><a href="../Мат логика/index-3.html">Мат логика</a></li>
+                <li class="link__navigation"><a href="../Круги Эйлера/index-4.html">Круги Эйлера</a></li>
+            </ol>
+        </aside>
+
+        <section class="allmain">
+            <p class="name">Тема: «Логика и логические задачи»</p>
+            <div class="transition"><a href="q4-1.html"><button>Далее</button></a></div><br>
+
+            <div class="text3">
+                <h3 class="zagal">Задание №3</h3>
+                <p class="zagal1">
+                    В шахматном турнире принимали участие шесть игроков из разных городов России: Воркуты, Иркутска,
+                    Саратова, Тюмени, Уфы и Рязани. Всего было сыграно пять туров, по три партии в каждом туре.
+                <p class="zagal2">
+                    В первом туре Александр играл с представителем Воркуты, уфимец — с Николаем, а Геннадий — с
+                    Михаилом.
+                    Во втором туре Денис играл с представителем Тюмени, а шахматист из Воркуты — с Николаем.
+                    В третьем туре Михаил играл с иркутянином.<br>
+                    <br>
+                    Кто из игроков представлял какой город, если в итоге Николай занял первое место, <br>Геннадий и
+                    иркутянин
+                    поделили 2-е и 3-е места, Денис был четвёртым, а Семён и саратовец поделили 5-е и 6-е места?<br><br>
+                    Укажите ответ выбрав указанные цифры. Пример: 2.
+                </p>
+            </div>
+            <div class="answer__question">
+                <ol>
+                    <li>Воркута</li>
+                    <li>Тюмень</li>
+                    <li>Уфа</li>
+                    <li>Иркутск</li>
+                    <li>Рязань</li>
+                    <li>Саратов</li>
+                </ol>
+                <form name="check1" class="boxfio1">
+                    <input type="text" oninput="this.value = this.value.replace(/[^0-9]/g,'')" class="fio" id="A"
+                        placeholder="Александр">
+
+                    <input type="text" oninput="this.value = this.value.replace(/[^0-9]/g,'')" class="fio" id="N"
+                        placeholder="Николай">
+
+                    <input type="text" oninput="this.value = this.value.replace(/[^0-9]/g,'')" class="fio" id="D"
+                        placeholder="Денис">
+
+                    <input type="text" oninput="this.value = this.value.replace(/[^0-9]/g,'')" class="fio" id="M"
+                        placeholder="Михаил">
+
+                    <input type="text" oninput="this.value = this.value.replace(/[^0-9]/g,'')" class="fio" id="G"
+                        placeholder="Геннадий">
+
+                    <input type="text" oninput="this.value = this.value.replace(/[^0-9]/g,'')" class="fio" id="S"
+                        placeholder="Семен">
+
+                </form>
+            </div>
+
+            <div class="transition">
+                <button onclick="check()" type="button">Проверить</button>
+            </div>
+            <script>
+                function check() {
+                    let a = document.getElementById("A").value;
+                    let b = document.getElementById("N").value;
+                    let c = document.getElementById("D").value;
+
+                    let d = document.getElementById("M").value;
+                    let f = document.getElementById("G").value;
+                    let g = document.getElementById("S").value;
+
+                    if (a == '4' && b == '5' & c == '3' && d == '6' && f == '2' && g == '1') {
+                        alert('Правильно!');
+                    }
+                    else {
+                        alert('Неправильно!');
+                    }
+                }
+            </script>
+
+        </section>
+    </main>
+</body>
+
+</html>

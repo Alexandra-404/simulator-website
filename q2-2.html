@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание №2</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <header class="header">
+        <section class="burger">
+            <img src="../img/menu.svg" alt="burger">
+        </section>
+        <section class="header-name">
+            <a href="#" class="header-logo">
+                <img src="../img/logo-test.svg" class="header-logo"> 
+            </a>
+           
+        </section> 
+        <nav id="mainnav">
+        <nav class="header-nav">
+            <ul class="list-reset header-list list-reset flex">
+                <li class="header-list-item">
+                    <a href="../info.html" class="header-link">
+                        О проекте
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </nav>
+        <section class="logo">
+            <a href="../index.html">Учебник <span>информатики</span></a>
+        </section>
+    </header>
+    <main class="main">
+        <aside class="navigation">
+            <div class="head__navigation">
+                <h2 class="theme">Темы</h2>
+            </div>
+
+            <ol class="list__navigation">
+                <li class="link__navigation"><a href="../Табличные задачи/index-1.html">Табличные задачи</a></li>
+                <li class="link__navigation"><a href="../Табличные модели/index-2.html">Табличные модели</a></li>
+                <li class="link__navigation"><a href="../Мат логика/index-3.html">Мат логика</a></li>
+                <li class="link__navigation"><a href="../Круги Эйлера/index-4.html">Круги Эйлера</a></li>
+            </ol>
+        </aside>
+
+<section class="allmain">
+            <p class="name">Тема: «Логика и логические задачи»</p>
+            <div class="transition"><a href="q3-2.html"><button>Далее</button></a></div><br>
+
+            <div class="text">
+                <h3 class="zagal">Задание №2</h3>
+                <p class="zagal1">
+                    Петя, Ваня и Саша учатся в одной начальной школе, но в разных классах.
+                    Петя перешёл в тот класс, в котором в прошлом году учился Саша. Через год
+                    Ваня перейдёт в тот класс, который в этом году закончит Петя. В каком
+                    классе учится каждый из мальчиков?<br>
+                    Укажите ответ выбрав указанные цифры. Пример: 2.
+                </p>
+            </div>
+
+            <div class="answer__question">
+                <ol>
+                    <li>1 класс</li>
+                    <li>2 класс</li>
+                    <li>3 класс</li>
+                    <li>4 класс</li>
+                </ol>
+                <form name="check1" class="boxfio">
+                    <input type="text" oninput="this.value = this.value.replace(/[^0-9]/g,'')"  class="fio" name="Petrov" id="Petrov" placeholder="Петя">
+
+                    <input type="text" oninput="this.value = this.value.replace(/[^0-9]/g,'')"   class="fio" name="Ivanov" id="Ivanov" placeholder="Ваня">
+
+                    <input type="text" oninput="this.value = this.value.replace(/[^0-9]/g,'')"   class="fio" name="Sidorov" id="Sidorov" placeholder="Саша">
+
+            </div>
+            
+            <div class="transition">
+                <button onclick="check()" type="button">Проверить</button>
+            </div>
+
+            <script>
+                function check() {
+                    let a = document.getElementById("Petrov").value;
+                    let b = document.getElementById("Ivanov").value;
+                    let c = document.getElementById("Sidorov").value;
+
+                    if (a == '3'  && b == '1' & c == '4') {
+                        alert('Правильно!');
+                    }
+                    else {
+                        alert('Неправильно!');
+                    }
+                }
+            </script>
+    </main>
+</body>
+</html>
